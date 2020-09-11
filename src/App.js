@@ -7,6 +7,7 @@ function App() {
 
   const [list,changeList] = useState("fetching users")
 
+
   const [counter, changeCounter] = useState(0)
 
   useEffect(() => {
@@ -15,6 +16,7 @@ function App() {
       changeList(request.data)
       // console.log(list) 
     })
+
   })
 
   return (
