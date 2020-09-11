@@ -1,34 +1,30 @@
-import React, {useState} from 'react';
+import React, {useEffect,useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
-// import axios from "axios"
+import axios from "axios"
 
 function App() {
 
-  // const [list,changeList] = useState("fetching users")
+  const [list,changeList] = useState("fetching users")
 
 
   const [counter, changeCounter] = useState(0)
 
-  // useEffect(() => {
+  useEffect(() => {
 
-  //   axios.get("/users").then((request) => {
-  //     changeList(request.data)
-  //     // console.log(list) 
-  //   })
+    axios.get("/users-info").then((request) => {
+      changeList(request.data)
+    })
 
-  // })
+  })
 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <button onClick={() => changeCounter(number => number + 1)}>click me</button>
-        {/* <p id="paragraph">
+        <p id="paragraph">
           {list[counter].name}
-        </p> */}
-        <p>
-          {counter}
         </p>
       </header>
     </div>

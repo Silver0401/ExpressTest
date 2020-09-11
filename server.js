@@ -3,11 +3,21 @@ const path = require("path")
 const app = express()
 let port = process.env.PORT || 5000
 
+let Users = [
+    {"name": "Isma"},
+    {"name": "Eguz"},
+    {"name": "Emix"},
+    {"name": "Euge"}
+]
+
 app.use(express.static(path.resolve(__dirname, "build")))
 
 app.get("/", (req,res) => {
     res.sendFile(path.resolve(__dirname, "build", "index.html"))
 })
 
+app.get("/users-info", (req,res) => {
+    res.send(Users)
+})
 
 app.listen(port, () => console.log(`Initializing server on port ${port}`))
