@@ -9,7 +9,7 @@ const Users = [
 ]
 
 app.get("/", (request, response) => {
-    response.send("Hello World Thingy")
+    response.send("Hello World Thingy Testing 2")
 })
 
 
