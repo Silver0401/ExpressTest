@@ -13,7 +13,8 @@
     "react-scripts": "3.4.3"
   },
   "scripts": {
-    "start": "concurrently \"npm run front-end\" \"npm run back-end\"",
+    "start":"npm run front-end",
+    "coso": "concurrently \"npm run front-end\" \"npm run back-end\"",
     "front-end":"react-scripts start",
     "back-end":"cd my-back-end && npm start",
     "build": "react-scripts build",
