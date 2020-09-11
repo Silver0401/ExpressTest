@@ -12,7 +12,9 @@
   },
   "scripts": {
     "heroku-postbuild": "cd front-end && nmp install --only=dev --no-shrinkw",
-    "start": "node index.js",
+    "start": "concurrently \"npm run back-end\" \"npm run front-end \"",
+    "back-end": "node index.js",
+    "front-end": "cd front-end/build/ && npm start",
     "test": "nodemon index.js"
   },
   "repository": {
