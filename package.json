@@ -1,27 +1,39 @@
 {
-  "name": "backendesting",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "my-front-end",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "express": "^4.17.1"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.4"
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "axios": "^0.20.0",
+    "concurrently": "^5.3.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.3"
   },
   "scripts": {
-    "start":"node index.js",
-    "test": "nodemon index.js"
+    "start": "concurrently \"npm run front-end\" \"npm run back-end\"",
+    "front-end":"react-scripts start",
+    "back-end":"cd my-back-end && npm start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Silver0401/ExpressTest.git"
+  "eslintConfig": {
+    "extends": "react-app"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Silver0401/ExpressTest/issues"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
-  "homepage": "https://github.com/Silver0401/ExpressTest#readme"
+  "proxy": "http://localhost:5000"
 }
