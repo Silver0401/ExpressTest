@@ -12,6 +12,11 @@ app.get("/", (request, response) => {
     response.send("Hello World")
 })
 
+
+app.get("/users", (req,res) => {
+    res.send(Users)
+})
+
 app.get("/page/page1", (request, response) => {
     response.send([1,2,3,"coso"])
 })
@@ -38,6 +43,6 @@ app.post("/things/thingy1", (req,res) => {
     }
 })
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 5000
 app.listen(port, () => console.log(`Listening on port ${port}`))
 
