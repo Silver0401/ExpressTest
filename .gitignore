@@ -4,3 +4,5 @@
 /build
 
 /Backend/node_modules
+
+/Backend/.env
