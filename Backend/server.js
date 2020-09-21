@@ -23,8 +23,6 @@ if (process.env.URL_THINGY === "coso"){
 
 } else {
 
-    app.use(express.static(path.resolve(__dirname, "./coso.html")))
-
     app.get("/", (req, res) => {
         res.sendFile(path.resolve(__dirname, "coso.html"))
     })
