@@ -1,6 +1,8 @@
 const express = require("express")
 const path = require("path")
 const app = express()
+const mongoose = require("mongoose")
+
 require("dotenv").config()
 
 let port = process.env.PORT || 5000
@@ -11,6 +13,17 @@ let Users = [
     {"name": "Emix"},
     {"name": "Euge"}
 ]
+
+mongoose.connect(process.env.DB_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true
+})
+const dataBase = mongoose.connection
+dataBase.on("error", error => console.log(error))
+dataBase.once("open", () => console.log("Connected to MongooseDB"))
+
+
 
 
 if (process.env.URL_THINGY === "coso"){
